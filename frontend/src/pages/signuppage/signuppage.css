@@ -1,0 +1,14 @@
+.signup-page-container {
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    gap: 5px;
+}
+
+.signup-page-rightside {
+    width: 70%;
+}
+
+.signup-page-rightside img {
+    height: 100%;
+}

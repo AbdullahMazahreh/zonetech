@@ -1,0 +1,28 @@
+.hero-container {
+  display: flex;
+  background-color: #d7effb;
+  box-sizing: border-box;
+  padding-left: 100px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+.hero-leftside {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.hero-content-h {
+  font-size: 55px;
+  font-weight: 500;
+}
+
+.hero-content-s {
+  font-size: 35px;
+}

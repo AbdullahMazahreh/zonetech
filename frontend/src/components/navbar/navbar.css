@@ -1,0 +1,48 @@
+header {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-leftside {
+  height: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.logo-container {
+  height: 100%;
+}
+
+.logo-container img {
+  height: 100%;
+}
+
+.header-rightside {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.shopping-cart {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.login-register-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: orange;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
