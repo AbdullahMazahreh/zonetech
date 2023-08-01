@@ -7,23 +7,23 @@ const productSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    // required: true,
+    required: true,
   },
   price: {
     type: String,
-    // required: true,
+    required: true,
   },
   category: {
     type: String,
-    // required: true,
+    required: true,
   },
   quantity: {
     type: Number,
-    // required: true,
+    required: true,
   },
   image: {
     type: String,
-    // required: true,
+    required: true,
   },
   vendor: {
     type: mongoose.Schema.Types.ObjectId,

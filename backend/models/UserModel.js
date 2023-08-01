@@ -2,18 +2,18 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 
-const currentCartSchema = new mongoose.Schema({
-  product: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Product",
-  },
-  quantity: {
-    type: Number,
-    required: true,
-  },
-});
+// const currentCartSchema = new mongoose.Schema({
+//   product: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: "Product",
+//   },
+//   quantity: {
+//     type: Number,
+//     required: true,
+//   },
+// });
 
-const CurrentCart = mongoose.model("PastOrders", currentCartSchema);
+// const CurrentCart = mongoose.model("PastOrders", currentCartSchema);
 
 const notificationSchema = mongoose.Schema({
   product: {
@@ -45,7 +45,6 @@ const userSchema = new mongoose.Schema({
   },
   passwordConfirm: {
     type: String,
-    required: true,
     validate: {
       //This only works on CREATE and SAVE !!!
       validator: function (ele) {
@@ -69,8 +68,7 @@ const userSchema = new mongoose.Schema({
   ],
   currentCart: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "CurrentCart",
+      type: Object,
     },
   ],
   notification: [

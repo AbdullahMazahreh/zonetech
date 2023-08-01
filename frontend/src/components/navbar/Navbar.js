@@ -4,10 +4,18 @@ import "./navbar.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { allData } from "../../context/Context";
 import { Button } from "../Index";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
-  const { signedInUser } = useContext(allData);
+  const { signedInUser, currentUser, refresh, setRefresh } =
+    useContext(allData);
+  const navigate = useNavigate();
+
+  const signOutHandler = () => {
+    localStorage.removeItem("token");
+    setRefresh(!refresh);
+    navigate("/");
+  };
 
   return (
     <Fragment>
@@ -17,23 +25,38 @@ function Navbar() {
             <img src={logo} alt="logo"></img>
           </div>
           <div className="nav-links">
-            <a href="/">Home</a>
-            <a href="/">Products</a>
-            <a href="/">About Us</a>
+            <Link to="/">Home</Link>
+            <Link to="/products">Products</Link>
           </div>
         </div>
         <div className="header-rightside">
           <div className="shopping-cart">
             {signedInUser ? (
               <Fragment>
-                <FaShoppingCart /> ShoppingBag
+                <Link to="/usercart">
+                  <FaShoppingCart />
+                </Link>
               </Fragment>
             ) : null}
           </div>
           <div className="login-register-container">
-            {signedInUser ? null : (
+            {signedInUser ? (
               <Fragment>
-                <Link to="/signup">
+                <div className="user-image-container">
+                  <img src={currentUser?.image} alt="profile" />
+                </div>
+                <div className="user-name-container">
+                  {currentUser?.username}
+                </div>
+                <Button
+                  color="gray"
+                  placeholder="Sign Out"
+                  clickFunction={signOutHandler}
+                />
+              </Fragment>
+            ) : (
+              <Fragment>
+                <Link to="/signin">
                   <Button color="gray" placeholder="Sign In" />
                 </Link>
               </Fragment>

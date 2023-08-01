@@ -68,3 +68,8 @@
 .signin-wrong-info.block {
   display: block;
 }
+
+.create-account {
+    color: orange;
+    text-decoration: underline;
+}

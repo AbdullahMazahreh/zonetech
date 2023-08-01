@@ -4,6 +4,7 @@ import { allData } from "../../context/Context";
 import axios from "axios";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 function Signinform() {
   const { setSignedUser, darkTheme, refresh, setRefresh } = useContext(allData);
@@ -28,7 +29,7 @@ function Signinform() {
       const token = user.data.token;
       localStorage.setItem("token", JSON.stringify(token));
       setSignedUser(token);
-      setRefresh(!refresh)
+      setRefresh(!refresh);
       navigate("/");
     } catch (err) {
       setShowIsWrongDiv(true);
@@ -76,6 +77,8 @@ function Signinform() {
             onClick={(e) => signInHandler(e)}
           ></input>
         </div>
+        <div>Don't Have An Accout?</div>
+        <Link to="/signup" className="create-account">Create Your Account</Link>
       </form>
     </Fragment>
   );

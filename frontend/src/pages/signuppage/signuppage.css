@@ -1,14 +1,20 @@
 .signup-page-container {
-    display: flex;
-    height: 80vh;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  gap: 5px;
 }
 
 .signup-page-rightside {
-    width: 70%;
+  width: 70%;
 }
 
 .signup-page-rightside img {
-    height: 100%;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .signup-page-rightside {
+    display: none;
+  }
 }

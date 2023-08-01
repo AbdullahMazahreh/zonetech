@@ -5,6 +5,10 @@ import {
   LandingPage,
   SignupPage,
   SigninPage,
+  Footer,
+  ProductsPage,
+  DetailsPage,
+  CartPage,
 } from "./components/Index";
 import { Route, Routes } from "react-router-dom";
 
@@ -16,7 +20,14 @@ function App() {
         <Route path="/" element={<LandingPage />}></Route>
         <Route path="/signup" element={<SignupPage />}></Route>
         <Route path="/signin" element={<SigninPage />}></Route>
+        <Route path="/products" element={<ProductsPage />}></Route>
+        <Route
+          path="/products/details/:productId"
+          element={<DetailsPage />}
+        ></Route>
+        <Route path="/usercart" element={<CartPage />}></Route>
       </Routes>
+      <Footer />
     </Fragment>
   );
 }

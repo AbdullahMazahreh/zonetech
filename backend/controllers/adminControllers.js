@@ -15,5 +15,5 @@ exports.createNewProduct = async (req, res) => {
       status: "fail",
       message: err,
     });
-  }
+  } 
 };
